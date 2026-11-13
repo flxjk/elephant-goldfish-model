@@ -4,7 +4,7 @@
 
 The **Elephant-Goldfish Model (EGM)** is an implementation of Spec-Driven
 Development (SDD) based on Dave Rensin's foundational article
-[Elephants, Goldfish, and the New Golden Age of Software Engineering](https://medium.com/@drensin/elephants-goldfish-and-the-new-golden-age-of-software-engineering-c33641a48874).
+Elephants, Goldfish, and the New Golden Age of Software Engineering.
 
 A general recommendation: start with the core philosophy before diving into the
 tools. Going through the conversational sequence once or twice, especially if

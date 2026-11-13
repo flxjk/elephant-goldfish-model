@@ -1,6 +1,6 @@
 # EGM Architecture & System Lifecycle
 
-*   **Authors:** Jim Quinn ([@quinnjim](https://github.com/quinnjim)), Elise Ewing ([@eewing314](https://github.com/eewing314)), Dave Rensin ([@drensin](https://github.com/drensin))
+*   **Authors:** Jim Quinn (@quinnjim), Elise Ewing (@eewing314), Dave Rensin (@drensin)
 *   **Status:** Current
 *   **Date:** 2026-06-06
 
@@ -9,7 +9,7 @@
 ## Overview
 
 The **Elephant-Goldfish Model (EGM)** is an implementation of Spec-Driven
-Development (SDD) based on [Elephants, Goldfish, and the New Golden Age of Software Engineering](https://medium.com/@drensin/elephants-goldfish-and-the-new-golden-age-of-software-engineering-c33641a48874).
+Development (SDD) based on Elephants, Goldfish, and the New Golden Age of Software Engineering.
 It emphasizes collaborative use of AI for design and review, maintaining verified
 technical specifications checked directly into the codebase.
 
@@ -186,7 +186,7 @@ adhere to the following UX protocol:
 
 ## References
 
-*   Dave Rensin, [Elephants, Goldfish, and the New Golden Age of Software Engineering](https://medium.com/@drensin/elephants-goldfish-and-the-new-golden-age-of-software-engineering-c33641a48874) (Medium, 2026).
+*   Dave Rensin, Elephants, Goldfish, and the New Golden Age of Software Engineering (Medium, 2026).
 
 ## Alternatives Considered
 

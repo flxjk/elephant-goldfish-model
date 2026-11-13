@@ -47,5 +47,5 @@ Check metadata colors and SVG structure, runtime byte equality, and README
 image inclusion. Website integration receives its own build and visual checks.
 All seven marks must remain legible beside their labels.
 
-The shared artwork and runtime-packaging PR #136 are merged. Artwork and
+The shared artwork and the runtime-packaging implementation are merged. Artwork and
 metadata checks do not establish native-host workflow support.

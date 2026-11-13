@@ -1,6 +1,5 @@
 ---
 import { Font } from 'astro:assets';
-import Analytics from '../components/Analytics.astro';
 import ThemeProvider from '@astrojs/starlight/components/ThemeProvider.astro';
 
 // gBreeze stylesheets straight from the package. Order matters only for the
@@ -56,7 +55,6 @@ const ogImage = new URL('/og.png', Astro.site);
     <meta name="twitter:image" content={ogImage} />
     <Font cssVariable="--font-display" preload />
     <Font cssVariable="--font-mono" />
-    <Analytics pageTitle={title} />
   </head>
   <body>
     <a class="skip-link" href="#main">Skip to content</a>

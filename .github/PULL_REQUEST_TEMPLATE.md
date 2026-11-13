@@ -38,4 +38,4 @@ egm-brainstorm, egm-draft, and egm-review.
 
 ## Human Accountability Affirmation
 
-- [ ] I am a human contributor. I personally reviewed this change and can explain every line. [AI and automated contribution policy](https://github.com/google/elephant-goldfish-model/blob/main/AI_POLICY.md#operational-rules)
+- [ ] I am a human contributor. I personally reviewed this change and can explain every line. [AI and automated contribution policy](https://github.com/flxjk/elephant-goldfish-model/blob/main/AI_POLICY.md#operational-rules)

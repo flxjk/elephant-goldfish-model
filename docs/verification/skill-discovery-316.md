@@ -1,4 +1,4 @@
-# Skill discovery comparison for #316
+# Skill discovery comparison
 
 One fresh session per case and revision on November 6, 2026. Baseline
 `6a8001e` and candidate `ce3e309` used the same prompts without EGM skill

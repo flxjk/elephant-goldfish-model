@@ -11,7 +11,7 @@ must not be treated as verified Goldfish isolation environments.
 ## Invocation and resources
 
 ```sh
-claude plugin marketplace add google/elephant-goldfish-model
+claude plugin marketplace add flxjk/elephant-goldfish-model
 claude plugin install egm@egm
 ```
 
@@ -172,7 +172,7 @@ to avoid confusion with an already installed `egm` plugin. Validate it with
 ## Claude Cowork
 
 Claude Cowork uses the same `.claude-plugin` package as Claude Code.
-Install the plugin from claude.ai/plugins or the Cowork plugin panel via marketplace `google/elephant-goldfish-model`.
+Install the plugin from claude.ai/plugins or the Cowork plugin panel via marketplace `flxjk/elephant-goldfish-model`.
 For a candidate package, Customize > Plugins > Add plugin > Upload plugin
 accepts a ZIP containing the Claude manifest, adapters, and shared runtime files.
 Install it and choose **Try in chat**. Record whether the resulting task runs
@@ -182,6 +182,5 @@ Installation alone does not establish that Claude Code's subagent settings or
 `${CLAUDE_PLUGIN_ROOT}` substitution work on that surface.
 Local testing with `claude --plugin-dir` is supported in Claude Code only.
 
-References: [plugin paths](https://code.claude.com/docs/en/plugins-reference),
-[skill invocation](https://code.claude.com/docs/en/skills), and
-[subagent context and tools](https://code.claude.com/docs/en/sub-agents).
+References: the Claude Code plugin paths, skill invocation, and subagent context
+and tools documentation.

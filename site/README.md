@@ -40,44 +40,30 @@ GitHub Pages.
 - **Explainer video**: `src/components/Explainer.astro` renders a self-hosted
   poster inside a button and creates the `youtube-nocookie.com` iframe only
   after the visitor clicks play.
-- **Cookies and analytics (`egm.dev` only)**: The EGM plugin itself collects zero
-  telemetry. On the canonical `https://egm.dev` site only (when the build sets
-  `PUBLIC_GA_MEASUREMENT_ID` and
-  `window.location.hostname === 'egm.dev'`), the page loads Google Cookie
-  Notification Bar (`cookienotificationbar.min.js`). Google Analytics 4
-  (`gtag.js`) loads only after the bar reports an affirmative accepted choice
-  with `loaded.detail.required === true`. Pending, rejected, absent, and failed
-  consent initialization never load GA. CNB's non-required fallback is not
-  affirmative consent. The documented instance `statuschange` listener updates
-  Consent Mode v2. Revocation sets GA's measurement disable flag before queuing
-  denied consent and blocks later event/config calls. CNB uses a separate data
-  layer so its defaults cannot enable analytics or advertising. Google Signals
-  and advertising storage/personalization stay disabled. The script scrubs URLs
-  and referrers before configuration. External forks, preview domains, local builds,
-  and builds without a measurement ID make zero requests to Google hosts.
+- **No analytics**: The site ships no analytics, tracking, consent banner,
+  cookies, or client-side telemetry. It loads no third-party measurement script
+  and makes zero requests to measurement hosts, on any hostname or in any build.
+  Nothing here is gated behind an environment variable, so forks and local builds
+  behave exactly like production. Keep it that way: a new analytics or
+  session-replay dependency needs an explicit decision, not a dependency bump.
 
-### Consent integration contract
+## Build telemetry
 
-The integration follows the public [CNB script](https://www.gstatic.com/glue/cookienotificationbar/cookienotificationbar.min.js)
-inspected on 2026-10-30 (SHA-256
-`e99eda4f401f141e55dcf8ccc1baa988e5165c99e89372d126841b8e7d26cd26`).
-Its constructor registers the global callback on `loaded`. After fetching
-configuration and storage, it emits `detail: { required, status }`. The
-autoloaded instance is available as `glue.CookieNotificationBar.instance`.
-Its `listen('statuschange', callback)` method receives `detail: { status }`.
-Its supported `customDataLayerName` option selects the data layer for its own
-consent commands. The browser fixtures model these source contracts.
+The Astro CLI reports anonymous build telemetry by default, including in CI,
+because its opt-in notice is skipped there. The site does not emit it:
 
-Google's [programmatic Analytics opt-out documentation](https://developers.google.com/tag-platform/security/guides/privacy#turn_off_google_analytics)
-states that the tag checks `ga-disable-MEASUREMENT_ID` before setting cookies
-or sending data. This check grounds revocation after the library loads,
-including automatic events that do not use the page's `gtag` wrapper.
-Revocation sets the flag before it queues denied consent.
-
-Browser checks intercept every network response. They check pending and
-rejected consent, grant, revocation before and after script execution, regrant,
-and disabled builds. Their GA fixture implements the documented disable flag.
-These are integration regression checks, not a live Google library audit.
+- scripts/astro.mjs sets ASTRO_TELEMETRY_DISABLED=1 for every CLI entry point.
+  Use npm run astro -- <args> instead of calling astro directly; the dev,
+  build, check, preview, and capture scripts already route through it.
+  The flag is set in the script, not with an inline environment prefix, so it
+  also works on Windows.
+- A committed .env file cannot replace the wrapper: Astro injects .env values
+  into import.meta.env only, while telemetry reads process.env.
+- @astrojs/telemetry is replaced by a local no-op stub in
+  vendor/astro-telemetry, wired in through the overrides field in
+  package.json. The stub provides the API Astro imports and makes no requests.
+  npm ci installs it, and tests/no-telemetry.test.mjs guards the override.
+- ASTRO_TELEMETRY_DISABLED=1 remains set in CI as defense in depth.
 
 ## Skill icons
 

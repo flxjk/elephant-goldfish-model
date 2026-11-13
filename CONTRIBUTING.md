@@ -12,9 +12,8 @@ section points to them.
 *   **Small fix within the Track 1 limits:** open a PR with the
     [PR template](.github/PULL_REQUEST_TEMPLATE.md).
 *   **New feature, architectural change, or anything over the Track 1
-    limits:** open a
-    [feature proposal issue](https://github.com/google/elephant-goldfish-model/issues/new?template=feature_proposal.md)
-    and follow the Track 2 steps. Existing design docs are listed in
+    limits:** open a feature proposal issue and follow the Track 2 steps.
+    Existing design docs are listed in
     [docs/designs/README.md](docs/designs/README.md).
 
 **Example:** If a documentation link is broken, fix the destination on a
@@ -23,7 +22,7 @@ branch, follow the [test setup in TESTING.md](TESTING.md), and run
 [PR template](.github/PULL_REQUEST_TEMPLATE.md) and record the result. A
 small fix like this does not need a prior issue or design document.
 
-For usage questions, use [Discussions Q&A](https://github.com/google/elephant-goldfish-model/discussions/categories/q-a).
+For usage questions, use Discussions Q&A.
 
 ## Design Principles
 
@@ -70,7 +69,7 @@ follows the EGM Spec-Driven Development process:
 
 1.  **Reach Out & Align (`design-ready`)**:
     Before investing in a large implementation or full specification, open a
-    [Feature / Architectural Inquiry Issue](https://github.com/google/elephant-goldfish-model/issues/new?template=feature_proposal.md)
+    feature / architectural inquiry issue
     (`.github/ISSUE_TEMPLATE/feature_proposal.md`) outlining the problem
     statement and proposed `Goals` vs. `Non-Goals`. We recommend using
     `/egm-brainstorm` to complete this section. Maintainers will review and apply
@@ -132,7 +131,7 @@ follows the EGM Spec-Driven Development process:
 ## Contributor License Agreement (CLA)
 
 Contributions to this project must be accompanied by a
-[Contributor License Agreement](https://cla.developers.google.com/about) (CLA).
+Contributor License Agreement (CLA).
 You (or your employer) retain the copyright to your contribution; this simply
 gives us permission to use and redistribute your contributions as part of the
 project.
@@ -140,8 +139,8 @@ project.
 If you or your current employer have already signed the Google CLA (even if it
 was for a different project), you probably don't need to do it again.
 
-Visit <https://cla.developers.google.com/> to see your current agreements or to
-sign a new one.
+Visit the Google Contributor License Agreement site to see your current
+agreements or to sign a new one.
 
 ## Community Guidelines
 
@@ -149,4 +148,4 @@ See our [accessibility statement](ACCESSIBILITY.md) for goals, current limits,
 and how to report accessibility barriers.
 
 This project follows
-[Google's Open Source Community Guidelines](https://opensource.google/conduct/).
+Google's Open Source Community Guidelines.

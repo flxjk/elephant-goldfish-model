@@ -9,13 +9,13 @@
   },
   "scripts": {
     "test": "node --test",
-    "test:browser": "node scripts/verify-analytics.mjs",
-    "dev": "astro dev",
-    "build": "astro build",
-    "preview": "astro preview",
-    "check": "astro check",
+    "dev": "npm run astro -- dev",
+    "build": "npm run astro -- build",
+    "preview": "npm run astro -- preview",
+    "check": "npm run astro -- check",
     "check:docs": "node scripts/check-docs.mjs",
-    "capture": "astro build && node scripts/capture.mjs"
+    "capture": "npm run build && node scripts/capture.mjs",
+    "astro": "node scripts/astro.mjs"
   },
   "dependencies": {
     "@astrojs/markdown-remark": "^7.3.5",
@@ -26,11 +26,15 @@
     "remark-parse": "^11.0.0",
     "remark-stringify": "^11.0.0",
     "starlight-llms-txt": "^0.12.0",
-    "unified": "^11.0.5"
+    "unified": "^11.0.5",
+    "@astrojs/telemetry": "file:./vendor/astro-telemetry"
   },
   "devDependencies": {
     "@astrojs/check": "^0.9.12",
     "puppeteer-core": "25.16.0",
     "typescript": "^6.0.3"
+  },
+  "overrides": {
+    "@astrojs/telemetry": "file:./vendor/astro-telemetry"
   }
 }

@@ -3,7 +3,7 @@
 - **Author:** @n3wth
 - **Status:** Proposed. Maintainer scope approval is pending.
 - **Date:** 2026-11-04
-- **Scope issue:** #122. Original candidate: PR #302. Separate review units replace that PR.
+- **Scope:** original candidate withdrawn in favor of separate review units.
 - **Candidate commit:** `b903f35`, which adds neutral intake tests to `53077c3d64c42fc906f18373892a8e63a1ce9d6e` without package changes.
 
 ## Overview
@@ -21,7 +21,7 @@ The current plugin summaries use internal workflow terms and long descriptions.
 The directory privacy link differs from the publisher privacy policy.
 Readers need a clear description of the plugin's purpose before installation.
 
-The original PR #302 exceeds the minor-patch limits.
+The original candidate exceeds the minor-patch limits.
 It changes all seven canonical skill descriptions and their generated copies.
 This proposal supplies a separate design review path. It does not claim a scope exception.
 
@@ -31,8 +31,7 @@ This proposal supplies a separate design review path. It does not claim a scope 
 - Use one short description for each skill across canonical and generated files.
 - Set the OpenAI listing category to Productivity.
 - Keep `https://egm.dev` as the website destination.
-- Keep the repository issues page as the support destination.
-- Use `https://policies.google.com/privacy` for `privacyPolicyUrl` and retain `https://github.com/google/elephant-goldfish-model/blob/main/LICENSE` for `termsOfServiceUrl`.
+- Publish no privacy-policy or terms URL; the repository LICENSE is the only legal reference.
 - Keep manifest files schema-valid and generated Claude files equal to package output.
 - Add three plugin starter prompts and a default prompt for each of the seven skills.
 - Preserve EGM-prefixed skill names and stable skill identifiers.
@@ -217,15 +216,15 @@ Add the 14 PNG assets listed above. Delete no source files. Change no dependenci
 
 ### Review units and merge order
 
-- PR #314 updates the publisher privacy destination across manifests while retaining the repository license for terms. It targets `main` and requires publisher approval.
-- PR #316 contains listing text, skill descriptions, plugin starter prompts, schema metadata, versions, and Cursor manifest checks. It targets `main`.
-- PR #317 contains per-skill OpenAI default prompts and their package and native prompt tests. It targets the #316 branch.
+- Unit 1 updates the publisher privacy destination across manifests while retaining the repository license for terms. It targets `main` and requires publisher approval.
+- Unit 2 contains listing text, skill descriptions, plugin starter prompts, schema metadata, versions, and Cursor manifest checks. It targets `main`.
+- Unit 3 contains per-skill OpenAI default prompts and their package and native prompt tests. It targets the Unit 2 branch.
 
-The policy PR is independent. Maintainers can reject it without blocking the other units.
-The feature PRs remain gated until this design merges and issue #122 receives implementation approval.
-Merge #316 to `main` before #317.
-After #316 merges, rebase #317 onto `main`, retarget its PR, and repeat checks and review.
-Do not merge #317 into the temporary parent branch.
+The policy unit is independent. Maintainers can reject it without blocking the other units.
+The feature units remain gated until this design merges and the publication scope receives implementation approval.
+Merge Unit 2 to `main` before Unit 3.
+After Unit 2 merges, rebase Unit 3 onto `main`, retarget its PR, and repeat checks and review.
+Do not merge Unit 3 into the temporary parent branch.
 The listing review restores the existing support disclaimer and partial-cloud limit in the listing text.
 Empirical checks show that PNG skill icons do not change what the host picker shows, so the implementation retains the SVG skill icons.
 This split follows the maintainer request for distinct purposes and smaller diffs. It does not create a minor-patch exception for the feature.
@@ -241,7 +240,7 @@ This split follows the maintainer request for distinct purposes and smaller diff
 
 These label names follow the current repository PR template.
 Review readiness does not establish scope approval or permission to merge the replacement feature PRs.
-Issue #122 remains the publication scope reference. This design does not complete its publication requirements.
+The publication scope reference remains open. This design does not complete its publication requirements.
 
 ## Required Tests
 
@@ -301,7 +300,7 @@ The unit suite passes 336 tests and skips two optional native probes.
 The tested ZIP's SHA256 is `47178bb1b08d3b3ef4b663991bbd4b6542a64f91edfcaa30b9a7c2552d1c2df2`.
 A fresh package build matches this archive. The revision changes tests only, so package bytes remain unchanged.
 
-The PR #302 description reports these results for `53077c3d64c42fc906f18373892a8e63a1ce9d6e`.
+The original candidate description reported these results for `53077c3d64c42fc906f18373892a8e63a1ce9d6e`.
 This design update records that report. It does not rerun the tests or inspect the native traces.
 
 - Unit suite: 336 pass and two optional native host probes skip.

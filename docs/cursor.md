@@ -7,7 +7,7 @@ SPDX-License-Identifier: Apache-2.0
 
 This adapter targets Cursor local Agent. Installation, workflow, and isolation
 remain unverified. Do not add Cursor to the supported-host table yet.
-See the [design](designs/additional-harnesses.md) and [issue #145](https://github.com/google/elephant-goldfish-model/issues/145).
+See the [design](designs/additional-harnesses.md).
 
 ## Interface and version
 
@@ -33,9 +33,8 @@ This does not prove runtime enforcement or foreground behavior.
 Select a model explicitly for a future live run and
 record its actual identifier from the task records.
 
-Sources: [plugin reference](https://cursor.com/docs/reference/plugins),
-[subagent configuration and context](https://cursor.com/docs/subagents), and
-[local plugin installation](https://cursor.com/docs/plugins#test-plugins-locally).
+Sources: the Cursor plugin reference, subagent configuration and context, and
+local plugin installation documentation.
 These sources describe host capabilities, not EGM verification results.
 
 ## Install a candidate
@@ -132,7 +131,7 @@ The probe pins Cursor CLI `2026.10.01-e373342` by platform and bundle SHA-256:
 - macOS arm64: `f6bd8dece34b56431ee74f1ac827e032d054381085e7da7088e85abdd1008330`.
 - Linux arm64: `90ec23826cd3089232b0b243b8954ac72fab0454dd86d7d71ddae29d39c75cd2`.
 
-The Linux bundle comes from Cursor's [versioned package](https://downloads.cursor.com/lab/2026.10.01-e373342/linux/arm64/agent-cli-package.tar.gz).
+The Linux bundle comes from Cursor's versioned package for `2026.10.01-e373342` (linux/arm64).
 Its downloaded archive SHA-256 was `785c5f6bf2a60eb1121e27ed8c14f5ee07ed1b5b6692324f2d9a997238245eb5`.
 These hashes identify the inspected files. They are not vendor signatures.
 It invokes the installed plugin loader without the CLI entry point.
@@ -193,7 +192,7 @@ Existing Claude and Codex trace tests do not validate Cursor evidence.
 ## Grok Bot assessment
 
 Grok Bot remains a separate, unverified surface. No Grok Bot adapter is included.
-Its [work guide](https://cursor.com/docs/grok-bot/work) describes retained memory
+Its work guide describes retained memory
 and a shared computer. These can expose previous findings to another reviewer.
 Local Cursor results cannot establish Grok Bot compatibility.
 

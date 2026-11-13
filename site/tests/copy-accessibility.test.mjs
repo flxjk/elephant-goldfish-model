@@ -9,7 +9,7 @@ const script = ts.transpile(source.match(/<script>([\s\S]*?)<\/script>/)[1]);
 
 for (const denied of [false, true]) {
   test(`copy preserves the command in its accessible name (denied=${denied})`, async () => {
-    const command = 'claude plugin marketplace add google/elephant-goldfish-model && \\\nclaude plugin install egm@egm';
+    const command = 'claude plugin marketplace add flxjk/elephant-goldfish-model && \\\nclaude plugin install egm@egm';
     const original = `Copy Claude command: ${command}`;
     let label = original;
     let click;

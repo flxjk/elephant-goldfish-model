@@ -5,7 +5,7 @@
 This adapter targets OpenCode CLI **1.18.29**, with V1 `task` and `permission` interfaces.
 It does not target V2 `subagent` or `permissions` interfaces.
 Installation checks do not establish workflow or isolation support.
-Maintainer approval, live workflows, and isolation verification remain pending under [#146](https://github.com/google/elephant-goldfish-model/issues/146).
+Maintainer approval, live workflows, and isolation verification remain pending.
 The proposed architecture is in [the additional harness design](designs/additional-harnesses.md).
 
 ## Install
@@ -189,12 +189,12 @@ summary or an absent marker as sufficient isolation evidence.
 
 Reviewed on 2026-10-24. The versioned sources define this adapter's interface:
 
-- [V1 agent configuration](https://github.com/anomalyco/opencode/blob/v1.18.29/packages/web/src/content/docs/agents.mdx)
-- [V1 config and merge order](https://github.com/anomalyco/opencode/blob/v1.18.29/packages/web/src/content/docs/config.mdx)
-- [V1 skill discovery](https://github.com/anomalyco/opencode/blob/v1.18.29/packages/web/src/content/docs/skills.mdx)
-- [V1 command syntax](https://github.com/anomalyco/opencode/blob/v1.18.29/packages/web/src/content/docs/commands.mdx)
-- [V1 command preprocessing](https://github.com/anomalyco/opencode/blob/v1.18.29/packages/opencode/src/session/prompt.ts)
-- [V1 task implementation](https://github.com/anomalyco/opencode/blob/v1.18.29/packages/opencode/src/tool/task.ts)
-- [V1 permission evaluator](https://github.com/anomalyco/opencode/blob/v1.18.29/packages/opencode/src/permission/index.ts)
-- [V1 MCP resource permission paths](https://github.com/anomalyco/opencode/blob/v1.18.29/packages/opencode/src/session/tools.ts)
-- [Current official agent guide](https://opencode.ai/docs/agents/)
+- V1 agent configuration
+- V1 config and merge order
+- V1 skill discovery
+- V1 command syntax
+- V1 command preprocessing
+- V1 task implementation
+- V1 permission evaluator
+- V1 MCP resource permission paths
+- Current official agent guide

@@ -42,8 +42,7 @@ The local command checks manifest versions and builds artifacts. It does not
 verify the caller-supplied source SHA, Git tag ancestry, or tests. Those checks
 belong to the workflow. Publish only workflow-built candidates after
 exact-artifact checks. Local builds remain diagnostic candidates.
-Exact installed-bundle verification remains tracked in
-[#60](https://github.com/google/elephant-goldfish-model/issues/60).
+Exact installed-bundle verification remains required.
 
 ## Verify downloads
 
@@ -53,8 +52,8 @@ With GitHub CLI installed, run these commands from that directory:
 ```sh
 sha256sum -c SHA256SUMS
 for archive in egm-claude-*.zip egm-openai-*.zip; do
-  gh attestation verify "$archive" --repo google/elephant-goldfish-model \
-    --signer-workflow google/elephant-goldfish-model/.github/workflows/release.yml \
+  gh attestation verify "$archive" --repo flxjk/elephant-goldfish-model \
+    --signer-workflow flxjk/elephant-goldfish-model/.github/workflows/release.yml \
     --source-ref refs/heads/main || exit 1
 done
 ```

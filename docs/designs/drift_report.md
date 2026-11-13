@@ -1,6 +1,6 @@
 # EGM Drift Detection Protocol (Living Specifications & Code Synchronization)
 
-*   **Author:** Jim Quinn ([@quinnjim](https://github.com/quinnjim))
+*   **Author:** Jim Quinn (@quinnjim)
 *   **Status:** Current
 *   **Date:** 2026-06-07
 
@@ -120,6 +120,6 @@ The drift detection skill is implemented across the following files:
 
 ## References
 
-*   Dave Rensin, [Elephants, Goldfish, and the New Golden Age of Software Engineering](https://medium.com/@drensin/elephants-goldfish-and-the-new-golden-age-of-software-engineering-c33641a48874) (Medium, 2026).
+*   Dave Rensin, Elephants, Goldfish, and the New Golden Age of Software Engineering (Medium, 2026).
 
 

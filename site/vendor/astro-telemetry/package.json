@@ -1,0 +1,11 @@
+{
+  "name": "@astrojs/telemetry",
+  "version": "3.4.2",
+  "type": "module",
+  "license": "MIT",
+  "description": "Local no-op replacement for @astrojs/telemetry; this fork ships no telemetry.",
+  "exports": {
+    ".": "./index.js",
+    "./package.json": "./package.json"
+  }
+}

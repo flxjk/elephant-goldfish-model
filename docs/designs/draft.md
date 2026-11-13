@@ -1,6 +1,6 @@
 # EGM Design Drafting: Specification Authoring & Semantic Boundaries
 
-*   **Authors:** Jim Quinn ([@quinnjim](https://github.com/quinnjim)), Elise Ewing ([@eewing314](https://github.com/eewing314))
+*   **Authors:** Jim Quinn (@quinnjim), Elise Ewing (@eewing314)
 *   **Status:** Current
 *   **Date:** 2026-06-06
 
@@ -206,5 +206,5 @@ The drafting capability is implemented across the following skill and reference 
 
 ## References
 
-*   Dave Rensin, [Elephants, Goldfish, and the New Golden Age of Software Engineering](https://medium.com/@drensin/elephants-goldfish-and-the-new-golden-age-of-software-engineering-c33641a48874) (Medium, 2026).
-*   GitHub, [GitHub Flavored Markdown Spec](https://github.github.com/gfm/).
+*   Dave Rensin, Elephants, Goldfish, and the New Golden Age of Software Engineering (Medium, 2026).
+*   GitHub, GitHub Flavored Markdown Spec.

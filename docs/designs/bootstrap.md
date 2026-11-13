@@ -1,6 +1,6 @@
 # Design Doc: EGM Repository & Package Bootstrap (egm-bootstrap)
 
-*   **Author:** Brian Suchy ([@briansuchy](https://github.com/briansuchy))
+*   **Author:** Brian Suchy (@briansuchy)
 *   **Status:** Current
 *   **Date:** 2026-06-29
 

@@ -1,9 +1,9 @@
 # Runtime packaging
 
-Status: Implemented by merged #136; native host evidence remains separate.
+Status: Implemented and merged; native host evidence remains separate.
 Author: @n3wth. Date: 2026-10-24.
 
-Related issues: #121 and #122. Implementation: #136.
+Implementation: merged. Directory publication remains separate.
 
 ## Problem and scope
 
@@ -17,7 +17,7 @@ or runtime support.
 
 ## Package contract
 
-Use `scripts/pack_plugin.py`, merged in #136, as the single builder.
+Use `scripts/pack_plugin.py` as the single builder.
 `--target claude|openai` selects the host. `--output` selects a new destination.
 Produce an `egm-TARGET` folder and an `egm-TARGET.zip` archive.
 
@@ -88,12 +88,12 @@ OpenAI packaging does not establish support for every ChatGPT mode.
 - Record the source SHA, installed artifact identity, host/model version,
   and separate installation, workflow, and isolation outcomes.
 - Preserve the cloud workflow and isolation gaps in
-  [Cowork #105](https://github.com/google/elephant-goldfish-model/issues/105)
-  and [ChatGPT Work #106](https://github.com/google/elephant-goldfish-model/issues/106).
-- Design and implementation #136 are merged; retain exact-artifact host checks.
+  [Cowork](https://github.com/flxjk/elephant-goldfish-model/blob/main/docs/claude.md)
+  and [ChatGPT Work](https://github.com/flxjk/elephant-goldfish-model/blob/main/docs/codex.md).
+- Design and implementation are merged; retain exact-artifact host checks.
 - Coordinate tagged artifacts through the [release design](releases.md).
 
-Directory publication in #121 and #122 remains separate. Confirm the owning
+Directory publication remains separate. Confirm the owning
 account, policy links, publisher authority, and provider findings before
 submission. Close those issues only after verifying the published listing.
 
@@ -103,5 +103,5 @@ Separate hand-maintained packages would drift. A full repository ZIP includes
 unneeded development content. A shared allowlist keeps package boundaries
 explicit and reviewable.
 
-Packaging implementation #136 is merged. Directory approval in #121/#122 and
+Packaging implementation is merged. Directory approval and
 exact-artifact host verification remain separate from that implementation.

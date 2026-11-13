@@ -1,9 +1,9 @@
 # Versioned runtime releases
 
-Status: Implemented by merged #137; v0.1.0 is published.
+Status: Implemented; v0.1.0 is published.
 Author: @n3wth. Date: 2026-10-24.
 
-Related issue: #124 (completed). Implementation: #137, using merged #136.
+Implementation: merged and complete.
 
 ## Problem and scope
 
@@ -61,15 +61,15 @@ replacing existing assets. Neither job creates tags or publishes releases.
 
 ## Acceptance and release procedure
 
-1. Design and implementation #136/#137 are merged, and #124 is complete.
-2. The first published release is [v0.1.0](https://github.com/google/elephant-goldfish-model/releases/tag/v0.1.0).
-3. Keep exact-artifact host verification in #60 open for remaining hosts.
+1. Design and implementation are merged and complete.
+2. The first published release is [v0.1.0](https://github.com/flxjk/elephant-goldfish-model/releases/tag/v0.1.0).
+3. Keep exact-artifact host verification open for remaining hosts.
 4. Select the reviewed version and commit. Regenerate packaged content and
    validate all included runtime changes before a maintainer creates the tag.
 5. Dispatch the workflow. Inspect both archives, checksums, and source identity.
-   Verify each ZIP with `gh attestation verify FILE --repo google/elephant-goldfish-model`.
+   Verify each ZIP with `gh attestation verify FILE --repo flxjk/elephant-goldfish-model`.
    Require the signing workflow `.github/workflows/release.yml` from `main`.
-6. Complete [the exact-bundle verification procedure in #60](https://github.com/google/elephant-goldfish-model/issues/60)
+6. Complete the exact-bundle verification procedure
    for each claimed host using these exact artifacts. Record
    installed-file identity, host/model versions, date, and separate installation,
    workflow, and isolation results.
@@ -84,7 +84,7 @@ validate its first real dispatch before accepting release preparation as done.
 
 Reuse historical host evidence only with an explicit explanation of its
 applicability. Do not present old candidate results as fresh artifact passes.
-Keep cloud support partial while #105 and #106 retain evidence gaps.
+Keep cloud support partial while Cowork and ChatGPT Work retain evidence gaps.
 
 ## Failure handling and alternatives
 

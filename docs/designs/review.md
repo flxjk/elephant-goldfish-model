@@ -1,6 +1,6 @@
 # EGM Goldfish Review Protocol & Resolution Engine
 
-*   **Authors:** Brandon Tearse ([@tearseb](https://github.com/tearseb)), Brian Suchy ([@briansuchy](https://github.com/briansuchy)), Sean Stappas ([@seanstappas](https://github.com/seanstappas))
+*   **Authors:** Brandon Tearse (@tearseb), Brian Suchy (@briansuchy), Sean Stappas (@seanstappas)
 *   **Status:** Current
 *   **Date:** 2026-06-10
 
@@ -195,5 +195,5 @@ drafting.
 
 ## References
 
-*   Dave Rensin, [Elephants, Goldfish, and the New Golden Age of Software Engineering](https://medium.com/@drensin/elephants-goldfish-and-the-new-golden-age-of-software-engineering-c33641a48874) (Medium, 2026).
-*   DARPA, [The Heilmeier Catechism](https://www.darpa.mil/about/heilmeier-catechism).
+*   Dave Rensin, Elephants, Goldfish, and the New Golden Age of Software Engineering (Medium, 2026).
+*   DARPA, The Heilmeier Catechism.

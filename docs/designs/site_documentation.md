@@ -3,7 +3,6 @@
 - **Author:** @n3wth
 - **Status:** Proposed. Maintainer scope approval is pending.
 - **Date:** 2026-11-04
-- **Scope issue:** #303. Related work: #7, #58, #301, and #302.
 
 ## Overview
 
@@ -23,8 +22,8 @@ The default draft and design-review skills target software designs.
 The custom review skill supports other documents through explicit reviewer and standard choices.
 The website must explain this distinction without a dense homepage disclaimer.
 
-Issue #7 proposes a single guide page and excludes search and multiple documentation pages.
-This proposal has a separate scope. Issue #7 and the worked-example issue #58 require separate work.
+A single guide page excludes search and multiple documentation pages.
+This proposal has a separate scope. That guide page and the worked example require separate work.
 
 ## Goals
 
@@ -44,7 +43,7 @@ This proposal has a separate scope. Issue #7 and the worked-example issue #58 re
 
 - Change skill execution, review permissions, or host support.
 - Change plugin manifests, categories, policy links, or skill descriptions.
-- Replace the existing production consent and analytics rules.
+- Add analytics, consent-banner, tracking, or session-replay scripts in any form.
 - Add accounts, a database, remote search, or an AI chat service.
 - Produce a recorded review example or claim an invented example is a real review.
 - Replace the repository contribution process with prototype approval.
@@ -54,7 +53,7 @@ This proposal has a separate scope. Issue #7 and the worked-example issue #58 re
 
 - A maintainer must approve the new scope and assign `design-ready` to its issue.
 - The design must merge before the issue can receive `pr-ready` for implementation.
-- PR #302 retains its separate metadata scope decision. This proposal does not grant that exception.
+- The plugin metadata work retains its separate scope decision. This proposal does not grant that exception.
 
 ## Critical User Journeys
 
@@ -161,9 +160,9 @@ Resolve relative paths against the source Markdown file, not its website route.
 Keep query strings and fragments. Preserve absolute URLs, root-relative website paths, and anchor-only references.
 Reject paths outside the repository and missing relative targets during the documentation check.
 
-- Link to repository files through `https://github.com/google/elephant-goldfish-model/blob/main/<path>`.
-- Link to repository directories through `https://github.com/google/elephant-goldfish-model/tree/main/<path>`.
-- Resolve image nodes through `https://raw.githubusercontent.com/google/elephant-goldfish-model/main/<path>`.
+- Link to repository files through `https://github.com/flxjk/elephant-goldfish-model/blob/main/<path>`.
+- Link to repository directories through `https://github.com/flxjk/elephant-goldfish-model/tree/main/<path>`.
+- Resolve image nodes through `https://raw.githubusercontent.com/flxjk/elephant-goldfish-model/main/<path>`.
 - For reference definitions used by images, use the raw asset destination. Other definitions follow the file or directory rule.
 
 An image and an ordinary link can share one reference definition. Use the raw destination for that definition so the image remains valid.
@@ -233,21 +232,9 @@ The build may fetch the public GitHub star count once, with a five-second timeou
 Invalid data or a network failure removes the count without failing the site build.
 The browser does not fetch GitHub counts or remote fonts.
 
-Preserve the production hostname and consent gates from current `main`.
-No Google analytics resources load on localhost or noncanonical hosts.
-Do not change consent behavior as part of this feature.
-The documentation layout must receive the same production consent behavior before production rollout.
-
-Extract the existing inline consent script into `site/src/components/Analytics.astro` without changing its logic.
-The component accepts `pageTitle: string` and reads `PUBLIC_GA_MEASUREMENT_ID` during the build.
-`Base.astro` and the Starlight `Head.astro` override both render this component.
-The component emits no script when the measurement ID is empty.
-Its script still checks `window.location.hostname === 'egm.dev'` before it loads external resources.
-The shared footer keeps the consent-management control.
-
-Update `site/tests/analytics.test.mjs` to test the extracted script.
-Update `site/scripts/verify-analytics.mjs` to test both homepage and documentation HTML under the same consent cases.
-Check pending, rejected, accepted, revoked, failed-initialization, and noncanonical-host states on both layouts.
+The site runs no analytics, consent banner, tracking, or client-side telemetry on any hostname.
+It loads no third-party measurement script and has no measurement-ID or consent gate to preserve.
+Every layout must keep that property as pages are added.
 
 ### Deployment
 
@@ -309,7 +296,7 @@ Retain self-hosted fonts and respect reduced-motion preferences.
 
 Review the design before implementation. Check the exact implementation branch before production release.
 Use local browser captures for visual review. A prototype does not establish production approval.
-Rollback the production implementation commit if routes, assets, or consent behavior fail.
+Rollback the production implementation commit if routes or assets fail.
 
 ## Detailed Implementation
 
@@ -317,9 +304,9 @@ Rollback the production implementation commit if routes, assets, or consent beha
 
 The implementation remains one feature, reviewed through four dependent Stage 2 PRs.
 The review units are dependencies and primitives, the documentation engine, the shared interface, and the homepage.
-Each unit retains this design, issue #303, and the full feature approval requirements.
+Each unit retains this design and the full feature approval requirements.
 This split reduces review scope. It does not use the minor-patch exception.
-Keep plugin metadata changes in PR #302 and published install documentation in PR #301.
+Keep plugin metadata changes and published install documentation in their separate PRs.
 Neither PR is a required code dependency for the site feature.
 
 Draft implementation PRs can expose the stack for review before approval.
@@ -329,8 +316,8 @@ No implementation PR can merge before this design merges and the issue receives 
 
 1. Add the content collection, route mapping, reference transform, exports, and their build checks.
    Require all documentation URLs, Markdown exports, and generated assets to resolve.
-2. Add the shared interface and consent component. Connect the homepage and Starlight layouts.
-   Require Astro checks, consent tests, and desktop and mobile browser checks to pass.
+2. Add the shared interface components. Connect the homepage and Starlight layouts.
+   Require Astro checks and desktop and mobile browser checks to pass.
 3. Add the final content, canonical icons, code styles, and production build triggers.
    Require the complete site and repository checks before implementation review.
 
@@ -360,7 +347,6 @@ Until earlier PRs merge, later upstream diffs include preceding commits. Their d
 Create the website Markdown files, collection loader, `Home.astro`, docs adapters, symbol assets, content helpers, Markdown endpoint, grid stylesheet, and docs stylesheet below.
 Change the existing configuration, dependency files, workflow, README, header, footer, base layout, homepage route, tokens, and global styles below.
 Create `site/src/components/gb/Symbol.astro`. Change `Button.astro`, `IconButton.astro`, and `site/src/components/Install.astro`.
-Create `Analytics.astro`. Change `site/tests/analytics.test.mjs` and `site/scripts/verify-analytics.mjs` for shared consent validation.
 Create `site/scripts/check-docs.mjs` and change `tests/unit/test_link_integrity.py`.
 Remove the replaced homepage components `Hero.astro`, `Install.astro`, `Model.astro`, `Loop.astro`, and `Skills.astro` after removing their callers.
 Keep `SkillIcon.astro` for the documentation pages. Do not add unused symbols or a wrapper around Starlight's unchanged footer.
@@ -384,8 +370,8 @@ Do not commit generated output.
 | --- | --- |
 | `site/src/pages/index.astro`, `site/src/components/Home.astro` | Publish the concise homepage, process diagram, install action, and task links. |
 | `site/src/components/Nav.astro`, `site/src/components/Footer.astro` | Share navigation, active states, legal links, and theme selection. |
-| `site/src/layouts/Base.astro` | Load shared tokens and grid styles while preserving production consent gates. |
-| `site/src/components/Analytics.astro`, `site/tests/analytics.test.mjs`, `site/scripts/verify-analytics.mjs` | Share the existing consent script and check it through both page layouts. |
+| `site/src/layouts/Base.astro` | Load shared tokens and grid styles for the homepage and documentation layout. |
+| `site/scripts/astro.mjs` | Run the Astro CLI with build telemetry disabled for every site command. |
 | `site/src/styles/tokens.css`, `site/src/styles/grid.css`, `site/src/styles/global.css`, `site/src/styles/docs.css` | Share text roles, gutters, readable content width, theme colors, and documentation styles. |
 | `site/src/components/Install.astro` | Update its guide destination in the interface step, then remove the panel with the old homepage. |
 | `site/src/components/gb/Button.astro`, `site/src/components/gb/IconButton.astro`, `site/src/components/gb/Symbol.astro` | Reuse native Material Web classes and local rounded symbols. |
@@ -432,17 +418,16 @@ Do not add or edit canonical skill instructions, manifests, or generated runtime
 - Check the theme menu, system preference changes, and persisted selection.
 - Compare home, guide, install, and skills pages in desktop light and dark themes.
 - Check mobile navigation, content overflow, table scrolling, and code scrolling.
-- Check that production consent behavior is present on both layouts before production release.
-- Check that localhost and noncanonical hosts do not request Google analytics resources.
+- Check the production build and both layouts for third-party measurement requests and scripts.
 
 The prototype passes the site build, documentation checks, nine site unit tests, and 336 repository unit tests.
 The test run skips two optional native host probes. These results do not replace tests on the final implementation branches.
-The full EGM review, denied-clipboard check, and production consent parity remain explicit review requirements.
+The full EGM review and denied-clipboard check remain explicit review requirements.
 
 ## Design Review Record
 
 Fresh-context reviewers apply the EGM Zoom Out, Comprehension, Implementation Readiness, and Codebase Details rubrics.
-The draft now defines skill groups, redirects, file operations, interface contracts, phases, and the required consent extraction.
+The draft now defines skill groups, redirects, file operations, interface contracts, and phases.
 The Zoom Out review finds no major issue. Comprehension findings pass a resolution check.
 The readiness review identifies two file classifications. The draft now states both operations explicitly.
 The exact interface dimensions remain in this document to keep the selected visual target measurable.

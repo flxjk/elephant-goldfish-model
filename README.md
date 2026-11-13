@@ -19,20 +19,14 @@ Develop ideas with context and review documents with fresh eyes. EGM is an open-
 
 The built-in draft and design-review workflow targets software specifications. For other documents, choose reviewers and standards with `/egm-review-loop`. Bootstrap and drift reporting apply to software codebases.
 
-https://github.com/user-attachments/assets/93c799a2-10a3-4266-af02-eb79dd33a9a2
-
 ## Install
 
 Choose your coding agent. Install the complete plugin so its skills can read the reviewer prompts and document standards.
 
-### ChatGPT and Codex desktop
-
-Open the [published EGM plugin](https://chatgpt.com/plugins/plugins_6aeb90f47ec88191a3c107e01d3eb357) in the desktop app and install it. This listing is desktop-only. For Codex CLI, use the commands below.
-
 ### Antigravity CLI
 
 ```sh
-agy plugin install https://github.com/google/elephant-goldfish-model
+agy plugin install https://github.com/flxjk/elephant-goldfish-model
 ```
 
 For the **Antigravity App** and **Antigravity for IDEs** (Visual Studio Code extension), run `/plugin` or see the [installation instructions](docs/harnesses.md#antigravity-app-and-antigravity-for-ides).
@@ -40,14 +34,14 @@ For the **Antigravity App** and **Antigravity for IDEs** (Visual Studio Code ext
 ### Claude Code
 
 ```sh
-claude plugin marketplace add google/elephant-goldfish-model
+claude plugin marketplace add flxjk/elephant-goldfish-model
 claude plugin install egm@egm
 ```
 
 ### Codex CLI
 
 ```sh
-codex plugin marketplace add google/elephant-goldfish-model
+codex plugin marketplace add flxjk/elephant-goldfish-model
 codex plugin add egm@egm
 ```
 
@@ -77,7 +71,7 @@ The agent compares each document in the folder with the current source code and 
 
 Open your project in your coding agent and choose a feature that needs design decisions. This example adds webhook delivery: what should happen when a delivery fails, or the same event arrives twice?
 
-The commands below are shown without a prefix. In Antigravity (agy CLI) and Claude Code, add the `/egm:` prefix, for example `/egm:egm-brainstorm`. On agy CLI 1.4.10 an unprefixed name is completed to the prefixed command ([#220](https://github.com/google/elephant-goldfish-model/issues/220)), but 1.4.8 does not ([#196](https://github.com/google/elephant-goldfish-model/issues/196)), so keep the prefix. In Codex, select the corresponding EGM skill from the skill picker. Brainstorming and review require a session that can create fresh subagents.
+The commands below are shown without a prefix. In Antigravity (agy CLI) and Claude Code, add the `/egm:` prefix, for example `/egm:egm-brainstorm`. On agy CLI 1.4.10 an unprefixed name is completed to the prefixed command, but 1.4.8 does not, so keep the prefix. In Codex, select the corresponding EGM skill from the skill picker. Brainstorming and review require a session that can create fresh subagents.
 
 <img src="skills/egm-brainstorm/assets/icon.svg" width="20" height="20" align="top" alt=""> **Explore the idea**
 
@@ -141,16 +135,16 @@ You can use each skill when you need it. You do not have to follow the full sequ
 
 - [Getting started](docs/getting_started.md): the workflow and project layout.
 - [Setup](docs/harnesses.md): installation, agent capabilities, and known limits.
-- [Architecture](https://github.com/google/elephant-goldfish-model/blob/main/docs/designs/architecture.md): how skills and reviewers fit together.
-- [Testing](https://github.com/google/elephant-goldfish-model/blob/main/TESTING.md): checks, execution records, and verification limits.
-- [Dave Rensin’s original essay](https://medium.com/@drensin/elephants-goldfish-and-the-new-golden-age-of-software-engineering-c33641a48874): the ideas behind EGM.
+- [Architecture](https://github.com/flxjk/elephant-goldfish-model/blob/main/docs/designs/architecture.md): how skills and reviewers fit together.
+- [Testing](https://github.com/flxjk/elephant-goldfish-model/blob/main/TESTING.md): checks, execution records, and verification limits.
+- Dave Rensin’s original essay: the ideas behind EGM.
 
 ## Contribute
 
-See the [accessibility statement](https://github.com/google/elephant-goldfish-model/blob/main/ACCESSIBILITY.md)
+See the [accessibility statement](https://github.com/flxjk/elephant-goldfish-model/blob/main/ACCESSIBILITY.md)
 for accessibility goals, known limits, and how to report barriers.
 
-Read [contributing](https://github.com/google/elephant-goldfish-model/blob/main/CONTRIBUTING.md) for PRs, [issues](https://github.com/google/elephant-goldfish-model/issues) for bugs, and [discussions](https://github.com/google/elephant-goldfish-model/discussions) for questions.
+Read [contributing](https://github.com/flxjk/elephant-goldfish-model/blob/main/CONTRIBUTING.md) for PRs and questions.
 
 ## License
 

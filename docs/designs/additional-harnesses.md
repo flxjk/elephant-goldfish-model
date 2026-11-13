@@ -1,9 +1,9 @@
 # Additional coding-agent harness support
 
-- **Author:** [@n3wth](https://github.com/n3wth)
+- **Author:** @n3wth
 - **Status:** Proposal. Maintainer scope approval and design review pending.
 - **Date:** 2026-10-24
-- **Tracking:** [Cursor #145](https://github.com/google/elephant-goldfish-model/issues/145), [OpenCode #146](https://github.com/google/elephant-goldfish-model/issues/146), [Copilot CLI #147](https://github.com/google/elephant-goldfish-model/issues/147)
+- **Tracking:** Cursor, OpenCode, and Copilot CLI.
 
 ## Problem and goals
 
@@ -16,7 +16,7 @@ Use small adapters for each host and the existing workflow test cases. Verify su
 another passes verification.
 
 This proposal changes no runtime behavior and establishes no support claim.
-It is independent of the packaging and release stack in #135, #136, and #137.
+It is independent of the packaging and release stack, and of the merged implementation work.
 Experimental implementations can be prepared in draft PRs stacked on this design.
 Maintainer scope approval and design approval remain merge prerequisites.
 Draft implementations do not establish host support or satisfy live verification.
@@ -29,7 +29,7 @@ Goals:
 - Preserve brainstorm, draft, review, human approval gates, and file artifacts.
 - Start fresh reviewers with enforceable read-only access where required.
 - Record installation, workflow, and isolation outcomes separately.
-- Reuse existing scenarios and integration fixtures. Follow shared-test extraction in #112 without waiting for a new framework.
+- Reuse existing scenarios and integration fixtures. Follow the shared-test extraction work without waiting for a new framework.
 
 Non-goals:
 
@@ -38,7 +38,7 @@ Non-goals:
 - Claiming support for Copilot in VS Code, Cursor cloud agents, or other surfaces
   based on a successful CLI or local IDE run.
 - Paid tests in ordinary CI, provider-policy workarounds, or marketplace publication.
-- Implementing Hermes, OpenClaw, or Delta here. #116 and #119 own that work.
+- Implementing Hermes, OpenClaw, or Delta here. Separate work owns those hosts.
 - Factory Droid or Pi support in this iteration.
 
 ## Existing components and ownership
@@ -138,9 +138,9 @@ files were written. Do not introduce a new default output directory here.
 
 ### Grok Bot compatibility
 
-Assess [Grok Bot](https://cursor.com/docs/grok-bot) separately under #145.
+Assess Grok Bot separately.
 Its persistent memory and shared cloud computer differ from Cursor local Agent.
-The [Grok Bot guide](https://cursor.com/docs/grok-bot/work) describes skills and
+The Grok Bot work guide describes skills and
 bot handoffs. It does not establish compatibility with the Cursor adapter.
 
 Check package import, required resource reads, fresh reviewer context, read-only
@@ -161,8 +161,7 @@ plus the project-instruction and parent-marker probe in
 [`tests/integration/test_claude.py`](../../tests/integration/test_claude.py),
 as behavioral references. Their native trace readers are host-specific.
 Adapt evidence collection to each new host; do not reuse incompatible parsers.
-The common runner and results schema remain follow-up work in
-[#112](https://github.com/google/elephant-goldfish-model/issues/112).
+The common runner and results schema remain follow-up work.
 
 Offline checks must cover:
 
@@ -205,7 +204,7 @@ No inline simulation of independent reviewers is permitted.
 | Reuse the parent's conversation for reviewers | Reject: it defeats Goldfish isolation. |
 | Build a universal adapter framework first | Reject: three concrete integrations do not justify a new framework. Extract common logic only after duplication appears. |
 | Add every harness listed by popular repositories | Reject: adoption elsewhere does not prove EGM's installation or isolation requirements. |
-| Support only the current hosts | Lowest maintenance cost, but leaves the demand represented by #145–#147 unmet. Maintainers may choose this until validation capacity is available. |
+| Support only the current hosts | Lowest maintenance cost, but leaves the demand for the additional hosts unmet. Maintainers may choose this until validation capacity is available. |
 
 ## Risks and mitigations
 
@@ -245,10 +244,10 @@ a release requires regenerated packages and validation of the exact candidate.
 
 Reviewed 2026-10-24. These are capability references, not EGM test evidence.
 
-- [Cursor subagents](https://cursor.com/docs/subagents)
-- [OpenCode agents](https://opencode.ai/docs/agents/)
-- [OpenCode V2 agents](https://dev.opencode.ai/v2/docs/agents/)
-- [Copilot CLI custom agents](https://docs.github.com/en/copilot/how-tos/copilot-cli/customize-copilot/create-custom-agents-for-cli)
-- [Superpowers integrations](https://github.com/obra/superpowers)
-- [Vercel Skills installation ecosystem](https://github.com/vercel-labs/skills)
-- [GBrain integrations](https://github.com/garrytan/gbrain)
+- Cursor subagents
+- OpenCode agents
+- OpenCode V2 agents
+- Copilot CLI custom agents
+- Superpowers integrations
+- Vercel Skills installation ecosystem
+- GBrain integrations

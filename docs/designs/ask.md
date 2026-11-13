@@ -1,9 +1,8 @@
 # EGM Ask: Read-Only Contextual Help & Next-Step Guidance
 
-*   **Author:** Smit Parmar ([@smituparmar01](https://github.com/smituparmar01))
+*   **Author:** Smit Parmar (@smituparmar01)
 *   **Status:** Draft
 *   **Date:** 2026-10-28
-*   **Issue:** [#175](https://github.com/google/elephant-goldfish-model/issues/175)
 
 --------------------------------------------------------------------------------
 
@@ -18,9 +17,8 @@ and replies in chat with a short answer and at most three suggested next steps.
 The skill is advisory only. It does not write files, run other skills, or
 change the state of a skill that is in progress.
 
-Issue [#175](https://github.com/google/elephant-goldfish-model/issues/175)
-proposed the name `/ask-egm`. The maintainers chose `/egm-ask` on that issue,
-so the command follows the `egm-` prefix that every other EGM skill uses.
+The initial proposal was to name the skill `/ask-egm`. The maintainers chose
+`/egm-ask`, so the command follows the `egm-` prefix that every other EGM skill uses.
 
 ## The Problem
 
@@ -230,7 +228,7 @@ when the user asks for it.
 | **"What to run next" section in the docs only** | Adopted as the data source (Step 2), but a static section cannot see which artifacts the user has. |
 | **Write the answer to an artifact file** | Help answers are short. A file per question adds clutter, and the user has to open it. |
 | **Model-invocable skill** | The model would trigger it on any "how do I" message, which collides with regular task prompts (a stated non-goal). |
-| **Name it `/ask-egm` as in the issue** | The maintainers chose `/egm-ask` on #175. It matches the `egm-` prefix of every current skill. |
+| **Name it `/ask-egm` as in the original proposal** | The maintainers chose `/egm-ask`. It matches the `egm-` prefix of every current skill. |
 
 ## Risks & Mitigations
 
@@ -311,6 +309,5 @@ size limit, packaging, and link integrity).
 
 ## References
 
-*   Issue [#175](https://github.com/google/elephant-goldfish-model/issues/175):
-    Add /ask-egm command for contextual help and guidance.
-*   Dave Rensin, [Elephants, Goldfish, and the New Golden Age of Software Engineering](https://medium.com/@drensin/elephants-goldfish-and-the-new-golden-age-of-software-engineering-c33641a48874) (Medium, 2026).
+*   Add /ask-egm command for contextual help and guidance.
+*   Dave Rensin, Elephants, Goldfish, and the New Golden Age of Software Engineering (Medium, 2026).

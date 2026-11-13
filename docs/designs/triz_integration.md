@@ -16,10 +16,9 @@ limitations under the License.
 
 # TRIZ Integration in EGM Plugin
 
-*   **Author:** Brian Suchy ([@briansuchy](https://github.com/briansuchy))
+*   **Author:** Brian Suchy (@briansuchy)
 *   **Status:** Draft
 *   **Date:** 2026-11-03
-*   **Issue:** [#37](https://github.com/google/elephant-goldfish-model/issues/37)
 
 --------------------------------------------------------------------------------
 
@@ -27,7 +26,7 @@ limitations under the License.
 
 This document specifies the integration of the **TRIZ method** (Theory of
 Inventive Problem Solving) into the open-source Elephant & Goldfish Model (EGM)
-framework (`github.com/google/elephant-goldfish-model`).
+framework (`github.com/flxjk/elephant-goldfish-model`).
 
 EGM separates high-context conversational drafting (**The Elephant**) from
 independent, zero-context critique (**Goldfish personas**). Existing Goldfish

@@ -7,9 +7,9 @@ import { unified } from '@astrojs/markdown-remark';
 
 
 // Static landing site for https://egm.dev, deployed to GitHub Pages.
-// Analytics and Cookie Notification Bar load only on canonical egm.dev when
-// PUBLIC_GA_MEASUREMENT_ID is configured; forks and local builds make zero
-// runtime requests to Google hosts.
+// The site ships no analytics, consent banner, or client-side telemetry, so a
+// built page makes zero requests to third-party measurement hosts. Astro's own
+// build telemetry is disabled by scripts/astro.mjs.
 export default defineConfig({
   site: 'https://egm.dev',
   output: 'static',

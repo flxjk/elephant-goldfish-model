@@ -1,9 +1,8 @@
 # Multi-Harness Support: Hermes Agent, OpenClaw, and Delta
 
-* **Authors:** Sriram ([@Seburan](https://github.com/Seburan)), Sriram Yatham ([@yathamsriram243-blip](https://github.com/yathamsriram243-blip))
+* **Authors:** Sriram (@Seburan), Sriram Yatham (@yathamsriram243-blip)
 * **Status:** Stage 1 design proposal; native contracts and live runs unverified
 * **Updated:** 2026-10-30
-* **Refs:** [#116](https://github.com/google/elephant-goldfish-model/issues/116)
 
 ## 1. Problem and Goals
 
@@ -50,9 +49,9 @@ turning an input into an implementation contract.
 
 | Host | Documented input | Contract still to verify |
 | --- | --- | --- |
-| Hermes Agent | Current [delegation documentation](https://hermes-agent.nousresearch.com/docs/user-guide/features/delegation) exposes `delegate_task(goal, context)`. Children have fresh conversations but inherit tool access and may receive workspace project context. | Package discovery, exact installed release, persona loading, project-context suppression, and enforced read-only permissions. Do not assume `hermes.spawn` or a per-call Claude-style tool filter. |
-| OpenClaw | The [manifest documentation](https://docs.openclaw.ai/plugins/manifest) distinguishes native `openclaw.plugin.json` plugins from compatible bundles. | Probe the existing EGM bundle first. Otherwise document the native schema and package root. Verify `openclaw plugins install`, loaded plugin identity, and the exact `sessions_spawn` schema against the pinned release. A renamed JSON file does not prove compatibility. |
-| Delta | [#116](https://github.com/google/elephant-goldfish-model/issues/116) names Delta as a target. | Confirm the product, upstream repository, release, installation format, and delegation API. No `delta.spawn`, isolation flag, manifest path, or minimum version is specified here. |
+| Hermes Agent | Current delegation documentation exposes `delegate_task(goal, context)`. Children have fresh conversations but inherit tool access and may receive workspace project context. | Package discovery, exact installed release, persona loading, project-context suppression, and enforced read-only permissions. Do not assume `hermes.spawn` or a per-call Claude-style tool filter. |
+| OpenClaw | The manifest documentation distinguishes native `openclaw.plugin.json` plugins from compatible bundles. | Probe the existing EGM bundle first. Otherwise document the native schema and package root. Verify `openclaw plugins install`, loaded plugin identity, and the exact `sessions_spawn` schema against the pinned release. A renamed JSON file does not prove compatibility. |
+| Delta | Delta is named as a target. | Confirm the product, upstream repository, release, installation format, and delegation API. No `delta.spawn`, isolation flag, manifest path, or minimum version is specified here. |
 
 No host-specific manifest path or minimum engine version is selected until
 the corresponding source and native installation probe establish it.
@@ -97,7 +96,7 @@ it in the parent context or with broader permissions.
 This PR contains this proposal and its design-index entry only.
 It changes no runtime manifests, installation guide, support records, or tests.
 Maintainer design approval does not certify native host support.
-Keep #116 open for implementation and evidence.
+Keep the implementation and evidence work open.
 
 ### Stage 2: Implement and Verify One Host
 

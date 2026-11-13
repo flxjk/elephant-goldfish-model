@@ -1,6 +1,6 @@
 # EGM Brainstorm: Zero-Doc Upstream Ideation & Multi-Lens Shootdown
 
-*   **Author:** Brian Suchy ([@briansuchy](https://github.com/briansuchy))
+*   **Author:** Brian Suchy (@briansuchy)
 *   **Status:** Current
 *   **Date:** 2026-07-31
 
@@ -132,5 +132,5 @@ specialized Goldfish personas defined in `agents/` and document standards:
 
 ## References
 
-*   Dave Rensin, [Elephants, Goldfish, and the New Golden Age of Software Engineering](https://medium.com/@drensin/elephants-goldfish-and-the-new-golden-age-of-software-engineering-c33641a48874) (Medium, 2026).
-*   DARPA, [The Heilmeier Catechism](https://www.darpa.mil/about/heilmeier-catechism).
+*   Dave Rensin, Elephants, Goldfish, and the New Golden Age of Software Engineering (Medium, 2026).
+*   DARPA, The Heilmeier Catechism.
